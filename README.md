@@ -9,7 +9,8 @@ YouTube channel: http://tiny.cc/ElectricEggheadYouTube
 Discord: https://discord.gg/vMvB8j6
 
 Medium: http://tiny.cc/ElectricEggheadMedium
---------------------------
+
+----------------------
 Images of challenge located in the ISSUES section.
 
 Create Your Utopia!
