@@ -2,7 +2,7 @@
 
 Electric Egghead was spurred on by a 12-month challenge created by indie game dev, Thomas Brush. Enjoy!
 --------------------------
-Website/Game Dev Blog: https://tiny.cc/electricegghead
+Website/Game Dev Blog: http://tiny.cc/ElectricEgghead
 
 YouTube channel: http://tiny.cc/ElectricEggheadYouTube
 
