@@ -1,6 +1,6 @@
-# 12MonthsGameStudio
+Electric Egghead's first game, Awol FX, will build your vocabulary as you build your world.
 
-Electric Egghead was spurred on by a 12-month challenge created by indie game dev, Thomas Brush. Enjoy!
+![Awol FX Cover Art](https://github.com/ElectricEgghead/12MonthsGameStudio/blob/master/awol%20fx%20background%20image.JPG)
 --------------------------
 Website/Game Dev Blog: http://tiny.cc/ElectricEgghead
 
