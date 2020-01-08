@@ -1,0 +1,31 @@
+// Basics of C++
+// In my code, I'll be adding a usingDeclarations.h file instead of using namespace std;
+
+#include <iostream>
+#include <string>
+// #include "usingDeclarations.h"
+
+int main()
+{
+  std::string characterName = "Tom";
+  int characterAge;
+  characterAge = 50;
+  char firstLetterName;
+  
+  std::cout << "There once was a man named " << characterName << "." << std::endl;
+  std::cout << "He was " << characterAge << " years old" << "." << std::endl;
+  std::cout << "He liked the name " << characterName << "." <<std::endl;
+  std::cout << "But did not like being " << characterAge << "." << std::endl;
+  std::cout << "\nOh, you don't like the name, " << characterName << "? \n\nWhat do you want this man's first and last name to be? ";
+  getline (std::cin, characterName);
+  std::cout << "Ok, he liked his previous name, but, " << characterName << ", will do, I guess!\n";
+  std::cout << "Right, so he has a new name chosen by you. How long is his name? " << characterName << ". Let's see." << std::endl;
+  std::cout << "His name is " << characterName.length() << " letters long. Cool!" << std::endl;
+  std::cout << "\nSo, you wrote his name and I'm sure you already know this, but, let's see what letter his name begins with..." << std::endl; 
+  std::cout << "\nHis awesome, not-chosen-by-him name starts with (" << characterName[0] << ")";
+  std::cout << "\nBut, curious minds want to know, does his name contain any e's? " << std::endl;
+  std::cout << characterName.find("e", 0); // FINISH, LOL
+  
+return 0;
+
+}
