@@ -43,10 +43,12 @@ int main(){
     break;
     
     default:
-    std::cout << "\nIt's hard...";
+    std::cout << "\nAsking questions with an open mind is a great way to get to know someone better, expand your view, and be an awesome person!";
     } // end switch
     
-    
+std::cout << "\n\nSo, if you've felt misunderstood, let yourself feel that again.";
+std::cout << "\n\nLet yourself feel those emotions, again. \nFeel the loneliness, emptiness, sadness, and frustration.";
+std::cout << "\nFeel your smallness, the tears trickling down your face, the ache in your heart, \nand your desire to find someone who cared." << "\n\nClose your eyes and go back to that time. When you arrive, open your eyes and press play...";    
     
  return 0;   
 }
