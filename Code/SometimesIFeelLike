@@ -1,0 +1,54 @@
+/**
+ * Program that teaches users about different societal realities using a matching game.
+ * Title: What is it like to be?
+ * 1/13/2020  
+ **/
+ 
+#include <iostream>
+#include <string>
+
+std::string userName;
+int userAnswer;
+std::string difference;
+std::string userGuess;
+std::string correctAnswer;
+
+
+int main(){
+    
+    std::cout << "Hey! Welcome to WHAT IS IT LIKE TO BE?";
+    std::cout << "\n\nThis app gives you quotes about different people's lived experience straight from their own mouths.\n\nTry matching the quote with the correct identity...";
+    std::cout << "\n\nWe're all a little different from one another. These differences are intentional, so let's celebrate our differences!";
+    std::cout << "\n\nIssues or questions? Contact the developer at electricegghead@gmail.com";
+    
+    std::cout << "\n\nWhat's your name? ";
+    std::getline(std::cin, userName);
+    std::cout << "I'm glad you're using this app, " << userName << "!";
+    std::cout << "\n\nHave you ever felt like no one understood you? ";
+    std::cout << "\n\nYes - 1, No - 2, Sometimes - 3";
+    std::cin >> userAnswer;
+    
+    switch (userAnswer) {
+        
+    case 1: 
+    std::cout << "\nMe, too. It can be hard to understand differences, and we get scared to ask questions.";    
+    break;
+    
+    case 2:
+    std::cout << "\nblahNO";
+    break;
+    
+    case 3:
+    std::cout << "\nblahsometimes";
+    break;
+    
+    default:
+    std::cout << "\nAsking questions with an open mind is a great way to get to know someone better, expand your view, and be an awesome person!";
+    } // end switch
+    
+std::cout << "\n\nSo, if you've felt misunderstood, let yourself feel that again.";
+std::cout << "\n\nLet yourself feel those emotions, again. \nFeel the loneliness, emptiness, sadness, and frustration.";
+std::cout << "\nFeel your smallness, the tears trickling down your face, the ache in your heart, \nand your desire to find someone who cared." << "\n\nClose your eyes and go back to that time. When you arrive, open your eyes and press play...";    
+    
+ return 0;   
+}
