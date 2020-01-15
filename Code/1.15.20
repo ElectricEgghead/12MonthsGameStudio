@@ -1,0 +1,64 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+
+// #include "usingDeclarations.h"
+
+int main()
+{
+  std::string characterName = "Tom Scott";
+  int characterAge;
+  characterAge = 50;
+  int neighborAge;
+  
+  std::cout << "There once was a man named " << characterName << "." << std::endl;
+  std::cout << "He was " << characterAge << " years old" << "." << std::endl;
+  std::cout << "He liked the name " << characterName << "." <<std::endl;
+  std::cout << "But did not like being " << characterAge << "." << std::endl;
+  std::cout << "\nOh, you don't like the name, " << characterName << "? \n\nWhat do you want this man's first and last name to be? ";
+  getline (std::cin, characterName);
+  std::cout << "\nOk, he liked his previous name, but, " << characterName << ", will do.\n";
+  std::cout << "\nSo he has a new name chosen by you. How long is his name? " << characterName << ". Let's see." << std::endl;
+  std::cout << "\nHis name is " << characterName.length() << " letters long. Cool!" << std::endl;
+  std::cout << "\nI'm sure you know this, but, let's see what letter his name begins with..." << std::endl; 
+  std::cout << "\nHis awesome, not-chosen-by-him name starts with (" << characterName[0] << ")";
+  std::cout << "\n\nCurious minds want to know, where is the first (e) in his name? " << std::endl;
+  characterName.find("e", 0);
+  
+  if (characterName.find("e", 0) >= 100) {
+      std::cout << "\nAnswer: There are no e's in his name.";
+  }
+  
+  else {
+        std::cout << "\nIndexing starts at 0, so the first (e) is at space " << characterName.find("e", 0);      
+  }
+  
+  std::cout << "\n\nLet's grab three characters of his name: " << characterName.substr(0,3); // starts at position 0 and grabs 3 characters; takes two parameters
+  
+  std::cout << "\n\n" << characterName << " has a neighbor. How old is his neighbor? ";
+  std::cin >> neighborAge;
+  fmax (characterAge, neighborAge); // will print out larger number. Can use fmin.
+  
+  if (characterAge < 1 || neighborAge < 1) {
+      std::cout << "\nBoth of them have to be, at least, one day old."; 
+      
+      }
+      
+  else if (characterAge < neighborAge) {
+      std::cout << "\n\n" << characterName << "'s neighbor is OLDER.";
+  }
+  
+  else if (characterAge > neighborAge){
+      std::cout << "\n\n" << characterName << "'s neighbor is YOUNGER.";  
+            
+  }
+  
+  
+  else {
+      std::cout << "\nThey're the same age!";      
+  }
+  
+  
+return 0;
+
+}
