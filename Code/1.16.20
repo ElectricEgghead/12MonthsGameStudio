@@ -4,12 +4,20 @@
 
 // #include "usingDeclarations.h"
 
-int main()
-{
+  
+    void luckyNums(){
+      
+      int luckyNums[] = {4, 8, 6, 3, 17}; // create an array
+      luckyNums[0] = 10; // can modify contents
+      std::cout << "\n\nYour lucky number is " << luckyNums[0];
+        
+      } // end luckyNums function;
+      
+    int main() {
+        
   std::string characterName = "Tom Scott";
   int characterAge = 50;
   int neighborAge;
- 
   
   std::cout << "There once was a man named " << characterName << "." << std::endl;
   std::cout << "He was " << characterAge << " years old" << "." << std::endl;
@@ -53,7 +61,6 @@ int main()
             
   }
   
-  
   else {
       std::cout << "\nThey're the same age. Twinsies, unite!";      
   }
@@ -92,8 +99,6 @@ int main()
         std::cout << "\nAnd whistled " << songName;
         std::cout << "\nThe rest of the horrifying trip went " << adjective;
         std::cout << "\nOh, " << curseWord << "!";
-        
-        
         }
         
     else if (playWordGame == 'n' || playWordGame == 'N') {
@@ -107,13 +112,9 @@ int main()
     } // end if
     
     } while (playWordGame == 'y' || playWordGame == 'Y'); // end do
-  
 
-  int luckyNums[] = {4, 8, 6, 3, 17}; // create an array
-  luckyNums[0] = 10; // can modify contents
-  
-  std::cout << "\n\nYour lucky number is " << luckyNums[0];
+  luckyNums();
   
   return 0;
 
-}
+} // end main
