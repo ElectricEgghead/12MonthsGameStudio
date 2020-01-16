@@ -108,7 +108,12 @@ int main()
     
     } while (playWordGame == 'y' || playWordGame == 'Y'); // end do
   
+
+  int luckyNums[] = {4, 8, 6, 3, 17}; // create an array
+  luckyNums[0] = 10; // can modify contents
   
-return 0;
+  std::cout << "\n\nYour lucky number is " << luckyNums[0];
+  
+  return 0;
 
 }
