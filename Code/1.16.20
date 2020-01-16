@@ -73,9 +73,9 @@ int main()
       
       if (playWordGame == 'y' || playWordGame == 'Y') {
         std::cin.get();
-        std::cout << "Enter a location: ";
+        std::cout << "\nEnter a location: ";
         std::getline (std::cin, location);
-        std::cout << "\nEnter a noun: ";
+        std::cout << "Enter a noun: ";
         std::getline (std::cin, noun1);
         std::cout << "Enter another noun: ";
         std::getline (std::cin, noun2);
@@ -87,10 +87,10 @@ int main()
         std::getline (std::cin, curseWord);
 
         // mad lib
-        std::cout << "\nWalking down the " << location; 
+        std::cout << "\nScreaming throughout " << location; 
         std::cout << "\n" << noun1 << " found a lucky " << noun2;    
-        std::cout << "\nand whistled " << songName;
-        std::cout << "\nThe rest of the day went " << adjective;
+        std::cout << "\nAnd whistled " << songName;
+        std::cout << "\nThe rest of the horrifying trip went " << adjective;
         std::cout << "\nOh, " << curseWord << "!";
         
         
