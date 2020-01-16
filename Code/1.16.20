@@ -72,7 +72,7 @@ int main()
       std::cin >> playWordGame;
       
       if (playWordGame == 'y' || playWordGame == 'Y') {
-        std::cin >> "";
+        std::cin.get();
         std::cout << "Enter a location: ";
         std::getline (std::cin, location);
         std::cout << "\nEnter a noun: ";
