@@ -45,11 +45,11 @@ int main()
       }
       
   else if (characterAge < neighborAge) {
-      std::cout << "\n\n" << characterName << "'s neighbor is OLDER than him.";
+      std::cout << "\n" << characterName << "'s neighbor is OLDER than him.";
   }
   
   else if (characterAge > neighborAge){
-      std::cout << "\n\n" << characterName << "'s neighbor is YOUNGER than him.";  
+      std::cout << "\n" << characterName << "'s neighbor is YOUNGER than him.";  
             
   }
   
@@ -68,7 +68,7 @@ int main()
     
     do {
       
-      std::cout << "\n\n--------------------\n\n" << characterName << " likes to play word games. Wanna play with him [y/n]? ";
+      std::cout << "\n\n--------------------" << characterName << " likes to play word games. Wanna play with him [y/n]? ";
       std::cin >> playWordGame;
       
       if (playWordGame == 'y' || playWordGame == 'Y') {
@@ -76,30 +76,27 @@ int main()
         std::getline (std::cin, location);
         std::cout << "\nEnter a noun: ";
         std::getline (std::cin, noun1);
-        std::cout << "\nEnter another noun: ";
+        std::cout << "Enter another noun: ";
         std::getline (std::cin, noun2);
-        std::cout << "\nEnter a song name: ";
+        std::cout << "Enter a song name: ";
         std::getline (std::cin, songName);
-        std::cout << "\nEnter an adjective: ";
+        std::cout << "Enter an adjective: ";
         std::getline (std::cin, adjective);
-        std::cout << "\nEnter a curse word (real or made-up): ";
+        std::cout << "Enter a curse word (real or made-up): ";
         std::getline (std::cin, curseWord);
 
-        
+        // mad lib
         std::cout << "\nWalking down the " << location << std::endl; 
-        std::cout << "\n" << noun1 << "found a lucky " << noun2 << std::endl;
-        
-        std::cout << noun1 << "and" << noun2 << "ERASE - TEST!";
-        
+        std::cout << "\n" << noun1 << " found a lucky " << noun2 << std::endl;    
         std::cout << "\nand whistled" << songName << std::endl;
         std::cout << "\nThe rest of the day went " << adjective << std::endl;
-        std::cout << "\nOh, " << curseWord << std::endl;
+        std::cout << "\nOh, " << curseWord << "!" << std::endl;
         
         
         }
         
     else if (playWordGame == 'n' || playWordGame == 'N') {
-        std::cout << "\nWell, fine then. Don't play." << characterName << " can play this fun game." << std::endl;
+        std::cout << "\nWell, fine then. Don't play. " << characterName << " can play this fun game alone." << std::endl;
         }
         
     else {
