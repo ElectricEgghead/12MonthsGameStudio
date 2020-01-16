@@ -68,11 +68,12 @@ int main()
     
     do {
       
-      std::cout << "\n\n--------------------" << characterName << " likes to play word games. Wanna play with him [y/n]? ";
+      std::cout << "\n\n--------------------" << "\n" << characterName << " likes to play word games. Wanna play with him [y/n]? ";
       std::cin >> playWordGame;
       
       if (playWordGame == 'y' || playWordGame == 'Y') {
-        std::cout << "\nEnter a location: ";
+        std::cin >> "";
+        std::cout << "Enter a location: ";
         std::getline (std::cin, location);
         std::cout << "\nEnter a noun: ";
         std::getline (std::cin, noun1);
@@ -86,11 +87,11 @@ int main()
         std::getline (std::cin, curseWord);
 
         // mad lib
-        std::cout << "\nWalking down the " << location << std::endl; 
-        std::cout << "\n" << noun1 << " found a lucky " << noun2 << std::endl;    
-        std::cout << "\nand whistled" << songName << std::endl;
-        std::cout << "\nThe rest of the day went " << adjective << std::endl;
-        std::cout << "\nOh, " << curseWord << "!" << std::endl;
+        std::cout << "\nWalking down the " << location; 
+        std::cout << "\n" << noun1 << " found a lucky " << noun2;    
+        std::cout << "\nand whistled " << songName;
+        std::cout << "\nThe rest of the day went " << adjective;
+        std::cout << "\nOh, " << curseWord << "!";
         
         
         }
