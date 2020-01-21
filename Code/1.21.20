@@ -9,6 +9,8 @@ bool characterHobbies();
 
 int main() {
 
+	characterHobbies();
+
 	string characterName = "Tom Scott";
 	int characterAge = 50;
 	int neighborAge;
@@ -145,43 +147,30 @@ double bossCubed(double bossAge) {
 
 bool characterHobbies() {
 
-	bool likesWriting;
-	bool likesDrinkingGames;
-
-	cout << "\nDoes he like writing [y/n]? ";
-	cin >> likesWriting;
-	if (likesWriting == 'y' || likesWriting == 'Y') {
-		likesWriting = true;
-	}
-
-	else if (likesWriting == 'n' || likesWriting == 'N') {
-		likesWriting = false;
-	}
-
-	else { //TODO data validation
-		cout << "\nDon't be fancy. Enter y or n.";
-		
-	} // end if
-
-	cout << "\nDoes he like drinking games [y/n]? ";
-	cin >> likesDrinkingGames;
-	if (likesDrinkingGames == 'y' || likesDrinkingGames == 'Y') {
-		likesDrinkingGames = true;
-	}
-
-	else if (likesDrinkingGames == 'n' || likesDrinkingGames == 'N') {
-		likesDrinkingGames = false;
-	}
-
-	else { //TODO data validation
-		cout << "\nYou may want to ease up on the drinking games. Enter y or n.";
-
-	} // end if
+	bool likesWriting = false;
+	bool likesDrinkingGames = true;
 
 	if (likesWriting && likesDrinkingGames) {
-		cout << "\nWhat's going to happen? I don't know.";
-
-
+		cout << "\nDrinks and writing. \nYes, it's true, his writing gets saner as the drinks increase.";
 	}
-	
+
+	else if (likesWriting || likesDrinkingGames) {
+		cout << "\nDrinks or writing. Never the two shall meet for him.";
+	}
+
+	else if (likesWriting && !likesDrinkingGames) {
+		cout << "\nWriting, hold the drink. \nI believe that if he drank more, he could be a famous writer, someday.";
+	}
+
+	else if (!likesWriting && likesDrinkingGames) {
+		cout << "\nPinot not a pen. That's his life's motto.";
+	} //TODO doesn't do these ones.
+
+	else {
+		cout << "\nHe hates writing, drinking games, and laughing.";
+		
+	} // end if TEST CODE
+
+	return (likesWriting, likesDrinkingGames); //TODO modify return
+
 } // end characterHobbies()
