@@ -3,6 +3,7 @@
 #include <cmath>
 #include "usingDeclarations.h"
 
+double compareAge(double characterAge, double neighborAge, double friendAge, string characterName);
 void luckyNums();
 double bossCubed(double bossAge);
 bool characterHobbies();
@@ -10,8 +11,9 @@ bool characterHobbies();
 int main() {
 
 	string characterName = "Tom Scott";
-	int characterAge = 50;
-	int neighborAge;
+	double characterAge = 50.0;
+	double neighborAge;
+	double friendAge;
 
 	cout << "\n\nThere once was a man named " << characterName << "." << endl;
 	cout << "He was " << characterAge << " years old" << "." << endl;
@@ -35,29 +37,15 @@ int main() {
 		cout << "\nIndexing in programming starts at 0, so the first (e) is at space " << characterName.find("e", 0) << ".";
 	}
 
-	cout << "\n\nLet's grab three characters of his name: " << characterName.substr(0, 3); // starts at position 0 and grabs 3 characters; takes two parameters
+	cout << "\n\nLet's grab three characters of his name: " << characterName.substr(3, 3); // starts at position 0 and grabs 3 characters; takes two parameters
 
 	cout << "\n\n" << characterName << " has a neighbor. How old is his neighbor? ";
 	cin >> neighborAge;
+	cout << "\n\n" << characterName << " also has a friend, surprisingly. How old is his must-be-crazy friend? ";
+	cin >> friendAge;
 	// fmax (characterAge, neighborAge); // will print out larger number. Can use fmin.
 
-	if (characterAge < 1 || neighborAge < 1) {
-		cout << "\nBoth of them have to be, at least, one day old."; //TODO add data validation
-
-	}
-
-	else if (characterAge < neighborAge) {
-		cout << "\n" << characterName << "'s neighbor is OLDER than him.";
-	}
-
-	else if (characterAge > neighborAge) {
-		cout << "\n" << characterName << "'s neighbor is YOUNGER than him.";
-
-	}
-
-	else {
-		cout << "\nThey're the same age. Twinsies, unite!";
-	}
+	compareAge(characterAge, neighborAge, friendAge, characterName);
 
 	// variables to play word game
 	char playWordGame;
@@ -166,3 +154,24 @@ bool characterHobbies() {
 	return (likesWriting, likesDrinkingGames);
 
 } // end characterHobbies()
+
+double compareAge(double characterAge, double neighborAge, double friendAge, string characterName) {
+
+	double result;
+	
+	if (characterAge < 1 || neighborAge < 1 || friendAge < 1) {
+		cout << "\nThey must be, at least, one day old."; //TODO add data validation
+	} else if (characterAge >= neighborAge && characterAge >= friendAge) {
+		result = characterAge;
+		cout << "\n" << characterName << " is OLDER than his neighbor and friend.";
+	} else if (neighborAge >= characterAge && neighborAge >= friendAge) {
+		result = neighborAge;
+		cout << "\n" << characterName << " and his friend are YOUNGER than his neighbor.";
+	} else {
+		result = friendAge;
+		cout << "\nHe and his neighbor are YOUNGER or the SAME AGE as his friend. Trinsies, unite!";
+	}
+
+	return result;
+
+} // end compareAge()
