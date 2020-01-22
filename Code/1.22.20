@@ -1,0 +1,214 @@
+#include <iostream>
+#include <string>
+#include <cmath>
+#include "usingDeclarations.h"
+
+double compareAge(double characterAge, double neighborAge, double friendAge, string characterName);
+double calculator();
+double bossCubed(double bossAge);
+void luckyNums(); 
+bool characterHobbies();
+
+int main() {
+
+	calculator(); //TODO move to end
+
+	string characterName = "Tom Scott";
+	double characterAge = 50.0;
+	double neighborAge;
+	double friendAge;
+
+	cout << "\n\nThere once was a man named " << characterName << "." << endl;
+	cout << "He was " << characterAge << " years old" << "." << endl;
+	cout << "He liked the name " << characterName << "." << endl;
+	cout << "But did not like being " << characterAge << "." << endl;
+	cout << "\nOh, you don't like the name, " << characterName << "? \n\nWhat do you want this man's first and last name to be? ";
+	getline(cin, characterName);
+	cout << "\nOk, he liked his previous name, but, " << characterName << ", will do.\n";
+	cout << "\nSo he has a new name chosen by you. How long is his name? " << characterName << ". Let's see." << endl;
+	cout << "\nHis name is " << characterName.length() << " letters long. Cool!" << endl;
+	cout << "\nI'm sure you know this, but, let's see what letter his name begins with..." << endl;
+	cout << "\nHis awesome, not-chosen-by-him name starts with (" << characterName[0] << ")";
+	cout << "\n\nCurious minds want to know, where is the first (e) in his name? " << endl;
+	characterName.find("e", 0);
+
+	if (characterName.find("e", 0) >= 100) {
+		cout << "\nAnswer: There are no e's in his name.";
+	}
+
+	else {
+		cout << "\nIndexing in programming starts at 0, so the first (e) is at space " << characterName.find("e", 0) << ".";
+	}
+
+	cout << "\n\nLet's grab three characters of his name: " << characterName.substr(3, 3); // starts at position 0 and grabs 3 characters; takes two parameters
+
+	cout << "\n\n" << characterName << " has a neighbor. How old is his neighbor? ";
+	cin >> neighborAge;
+	cout << "\n\n" << characterName << " also has a friend, surprisingly. How old is his must-be-crazy friend? ";
+	cin >> friendAge;
+	// fmax (characterAge, neighborAge); // will print out larger number. Can use fmin.
+
+	compareAge(characterAge, neighborAge, friendAge, characterName);
+
+	// variables to play word game
+	char playWordGame;
+	string location;
+	string noun1, noun2;
+	string songName;
+	string adjective;
+	string curseWord;
+
+	do {
+
+		cout << "\n\n--------------------" << "\n" << characterName << " likes to play word games. Wanna play with him [y/n]? ";
+		cin >> playWordGame;
+
+		if (playWordGame == 'y' || playWordGame == 'Y') {
+			cin.get();
+			cout << "\nEnter a location: ";
+			getline(cin, location);
+			cout << "Enter a noun: ";
+			getline(cin, noun1);
+			cout << "Enter another noun: ";
+			getline(cin, noun2);
+			cout << "Enter a song name: ";
+			getline(cin, songName);
+			cout << "Enter an adjective: ";
+			getline(cin, adjective);
+			cout << "Enter a curse word (real or made-up): ";
+			getline(cin, curseWord);
+
+			// mad lib
+			cout << "\nScreaming throughout " << location;
+			cout << "\n" << noun1 << " found a lucky " << noun2;
+			cout << "\nAnd whistled " << songName;
+			cout << "\nThe rest of the horrifying trip went " << adjective;
+			cout << "\nOh, " << curseWord << "!";
+		}
+
+		else if (playWordGame == 'n' || playWordGame == 'N') {
+			cout << "\nWell, fine then. Don't play. " << characterName << " can play this fun game alone." << endl;
+		}
+
+		else {
+			cout << "\nEnter [y/n]. Thanks!";
+
+
+		} // end if
+
+	} while (playWordGame == 'y' || playWordGame == 'Y'); // end do
+
+	luckyNums(); // has an array
+
+	double bossAge;
+
+	cout << characterName << "'s boss wants to know her age, cubed.";
+	cout << "\nUnclear why, but " << characterName << " likes his j o b.";
+	cout << "\n\n[SIGH] Let's do this. What is his boss' age? ";
+	cin >> bossAge; //TODO add data validation
+		// cout << "\nHis boss is looking too short or too long in the teeth. Enter another age: ";
+	cout << "\nHis boss' cubed age is " << bossCubed(bossAge) << ". Yay. For. Her.";
+	
+	cout << "\n\nWhat does " << characterName << " like to do when not figuring out his boss' cubed age?";
+	
+	characterHobbies();
+	
+	cin >> bossAge; //TODO erase
+
+	return 0;
+
+} // end main()
+
+void luckyNums() {
+
+	int luckyNums[] = { 4, 8, 6, 3, 17 }; // create an array
+	luckyNums[0] = 10; // can modify contents
+	cout << "\n\nYour lucky number is " << luckyNums[0] << endl;
+
+} // end luckyNums()
+
+double bossCubed(double bossAge) {
+
+	return bossAge * bossAge * bossAge;
+
+} // end bossCubed()
+
+bool characterHobbies() {
+
+	bool likesWriting = false;
+	bool likesDrinkingGames = true;
+
+	if (likesWriting && likesDrinkingGames) {
+		cout << "\nDrinks and writing. \nYes, it's true, his writing gets saner as the drinks increase.";
+	}
+
+	else if (likesWriting && !likesDrinkingGames) {
+		cout << "\nWriting, hold the drink. \nI believe that if he drank more, he could be a famous writer, someday.";
+	}
+
+	else if (!likesWriting && likesDrinkingGames) {
+		cout << "\nDrinking only. Pinot not a pen. That's his life's motto.";
+	}
+
+	else {
+		cout << "\nHe hates writing, drinking games, and laughing.";
+		
+	} // end if
+	return (likesWriting, likesDrinkingGames);
+
+} // end characterHobbies()
+
+double compareAge(double characterAge, double neighborAge, double friendAge, string characterName) {
+
+	double result;
+	
+	if (characterAge < 1 || neighborAge < 1 || friendAge < 1) {
+		cout << "\nThey must be, at least, one day old."; //TODO add data validation
+	} else if (characterAge >= neighborAge && characterAge >= friendAge) {
+		result = characterAge;
+		cout << "\n" << characterName << " is OLDER than his neighbor and friend.";
+	} else if (neighborAge >= characterAge && neighborAge >= friendAge) {
+		result = neighborAge;
+		cout << "\n" << characterName << " and his friend are YOUNGER than his neighbor.";
+	} else {
+		result = friendAge;
+		cout << "\nHe and his neighbor are YOUNGER or the SAME AGE as his friend. Trinsies, unite!";
+	}
+
+	return result;
+
+} // end compareAge()
+
+double calculator() {
+	double result;
+
+	double num1;
+	double num2;
+	char op;
+
+	cout << "\nEnter first number: ";
+	cin >> num1;
+	cout << "\nEnter operator: ";
+	cin >> op;
+	cout << "\nEnter second number: ";
+	cin >> num2;
+
+	if (op == '+') {
+		result = num1 + num2;
+	} else if (op == '-') {
+		result = num1 - num2;
+	} else if (op == '/') {
+		result = num1 / num2;
+	} else if (op == '*') {
+		result = num1 * num2;
+	} else {
+		cout << "\nInvalid operator.";
+	}
+
+	cout << num1; 
+	cout << "\n" << op; 
+	cout << "\n" << num2;
+	cout << "\n___\n" << result;
+
+	return result;
+}
