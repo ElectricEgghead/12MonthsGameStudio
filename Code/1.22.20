@@ -12,10 +12,6 @@ string getDayOfWeek(int dayNum);
 
 int main() {
 
-	cout << getDayOfWeek(0);
-	// getDayOfWeek(dayNum);
-	calculator(); //TODO move to end
-
 	string characterName = "Tom Scott";
 	double characterAge = 50.0;
 	double neighborAge;
@@ -115,7 +111,11 @@ int main() {
 	cout << "\n\nWhat does " << characterName << " like to do when not figuring out his boss' cubed age?";
 	
 	characterHobbies();
+	cout << getDayOfWeek(6);
+	// getDayOfWeek(dayNum);
+	calculator(); //TODO move to end
 	
+	cout << "Enter boss' age. This is just a placeholder. Doesn't matter. ";
 	cin >> bossAge; //TODO erase
 
 	return 0;
@@ -169,7 +169,7 @@ double compareAge(double characterAge, double neighborAge, double friendAge, str
 		cout << "\n" << characterName << " and his friend are YOUNGER than his neighbor.";
 	} else {
 		result = friendAge;
-		cout << "\nHe and his neighbor are YOUNGER or the SAME AGE as his friend. Trinsies, unite!";
+		cout << "\nHe and his neighbor are YOUNGER or the SAME AGE as his friend. Possible trinsies, unite!\n";
 	}
 
 	return result;
@@ -205,7 +205,7 @@ double calculator() {
 	cout << num1; 
 	cout << "\n" << op; 
 	cout << "\n" << num2;
-	cout << "___\n" << result;
+	cout << "\n__\n" << result;
 
 	return result;
 }
