@@ -8,9 +8,12 @@ double calculator();
 double bossCubed(double bossAge);
 void luckyNums(); 
 bool characterHobbies();
+string getDayOfWeek(int dayNum);
 
 int main() {
 
+	cout << getDayOfWeek(0);
+	// getDayOfWeek(dayNum);
 	calculator(); //TODO move to end
 
 	string characterName = "Tom Scott";
@@ -33,7 +36,7 @@ int main() {
 	characterName.find("e", 0);
 
 	if (characterName.find("e", 0) >= 100) {
-		cout << "\nAnswer: There are no e's in his name.";
+		cout << "\nAnswer: There are no e's in his name."; //TODO fix error message - out of range
 	}
 
 	else {
@@ -140,20 +143,14 @@ bool characterHobbies() {
 
 	if (likesWriting && likesDrinkingGames) {
 		cout << "\nDrinks and writing. \nYes, it's true, his writing gets saner as the drinks increase.";
-	}
-
-	else if (likesWriting && !likesDrinkingGames) {
+	} else if (likesWriting && !likesDrinkingGames) {
 		cout << "\nWriting, hold the drink. \nI believe that if he drank more, he could be a famous writer, someday.";
-	}
-
-	else if (!likesWriting && likesDrinkingGames) {
+	} else if (!likesWriting && likesDrinkingGames) {
 		cout << "\nDrinking only. Pinot not a pen. That's his life's motto.";
-	}
-
-	else {
+	} else {
 		cout << "\nHe hates writing, drinking games, and laughing.";
 		
-	} // end if
+	}
 	return (likesWriting, likesDrinkingGames);
 
 } // end characterHobbies()
@@ -208,7 +205,43 @@ double calculator() {
 	cout << num1; 
 	cout << "\n" << op; 
 	cout << "\n" << num2;
-	cout << "\n___\n" << result;
+	cout << "___\n" << result;
 
 	return result;
+}
+
+string getDayOfWeek(int dayNum) {
+
+	string dayName;
+	
+	switch (dayNum) {
+
+	case 0:
+		dayName = "\nSunday";
+		break;
+	case 1:
+		dayName = "\nMonday";
+		break;
+	case 2:
+		dayName = "\nTuesday";
+		break;
+	case 3:
+		dayName = "\nWednesday";
+		break;
+	case 4:
+		dayName = "\nThursday";
+		break;
+	case 5:
+		dayName = "\nFriday";
+		break;
+	case 6:
+		dayName = "\nSaturday";
+		break;
+	default:
+		cout << "\n\nInvalid input, but you're still awesome! Enter numbers 0 - 6.";
+
+	}
+
+	return dayName;
+
 }
