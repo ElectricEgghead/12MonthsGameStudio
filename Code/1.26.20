@@ -6,11 +6,11 @@
 double compareAge(double characterAge, double neighborAge, double friendAge, string characterName);
 double calculator();
 double bossCubed(double bossAge);
-void luckyNums();
 bool characterHobbies();
 string getDayOfWeek(int dayNum);
+void luckyNums();
 void secretCandyGame();
-void forLoopFunc();
+void forNeighborAge();
 
 int main() {
 
@@ -18,8 +18,6 @@ int main() {
 	double characterAge = 50.0;
 	double neighborAge;
 	double friendAge;
-
-	forLoopFunc(); 
 	
 	cout << "There once was a man named " << characterName << "." << endl;
 	cout << "He was " << characterAge << " years old" << "." << endl;
@@ -34,7 +32,11 @@ int main() {
 	cout << "\nI'm sure you know this, but, let's see what letter his name begins with..." << endl;
 	cout << "\nHis awesome, not-chosen-by-him name starts with (" << characterName[0] << ")";
 	cout << "\n\nCurious minds want to know, where is the first (e) in his name? " << endl;
-	characterName.find("e", 0);
+	characterName.find("e", 0); 
+	
+	/**
+	/TODO research https://developercommunity.visualstudio.com/content/problem/251812/spurious-c4834-warning.html
+	**/
 
 	if (characterName.find("e", 0) >= 100) {
 		cout << "\nAnswer: There are no e's in his name.";
@@ -123,11 +125,17 @@ int main() {
 	characterHobbies();
 	cout << getDayOfWeek(10);
 	// getDayOfWeek(dayNum);
+	cout << "\nCALCULATOR" << endl;
 	calculator();
 
-	cout << characterName << " loves candy. But, how many pieces does he eat per sitting?";
+	cout << "\n" << characterName << " loves candy. But, how many pieces does he eat per sitting?";
 
+	cout << "\nGUESSING game\n" << endl;
+	
 	secretCandyGame();
+
+	cout << "\n" << characterName << " has a TON of neighbors. Their ages are " << endl;
+	forNeighborAge();
 
 	cout << "\n\nEnter boss' age. This is just a placeholder. Doesn't matter. ";
 	cin >> bossAge; //TODO erase
@@ -174,7 +182,11 @@ bool characterHobbies() {
 
 double compareAge(double characterAge, double neighborAge, double friendAge, string characterName) {
 
-	double result;
+	double result = 0.0; 
+	
+	/**
+	TODO research curly brace initalization. https://stackoverflow.com/questions/18222926/why-is-list-initialization-using-curly-braces-better-than-the-alternatives
+	**/
 
 	if (characterAge < 1 || neighborAge < 1 || friendAge < 1) {
 		cout << "\nThey must be, at least, one day old."; //TODO add data validation
@@ -197,13 +209,13 @@ double compareAge(double characterAge, double neighborAge, double friendAge, str
 } // end compareAge()
 
 double calculator() {
-	double result;
+	double result = 0.0;
 
 	double num1;
 	double num2;
 	char op;
 
-	cout << "\n\nEnter first number: ";
+	cout << "\nEnter first number: ";
 	cin >> num1;
 	cout << "\nEnter operator: ";
 	cin >> op;
@@ -222,6 +234,7 @@ double calculator() {
 	else if (op == '*') {
 		result = num1 * num2;
 	}
+
 	else {
 		cout << "\nInvalid operator.";
 	}
@@ -297,9 +310,12 @@ void secretCandyGame() {
 	}
 }
 
-void forLoopFunc() {
-	for (int i = 1; i <= 5; i++) {
-		cout << i << "\n" << endl;
+void forNeighborAge() {
+	
+	int neighborAge[5] = {89, 12, 56, 2, 63};
+	for (int j = 0; j < 5; j++) {
+		cout << neighborAge[j] << endl;
 	}
+
 
 } // end forLoopFunc()
