@@ -4,6 +4,33 @@
 #include "usingDeclarations.h"
 #include "functionDeclarations.h"
 
+class Movie {
+private:
+	string rating;
+
+public:
+	string title;
+	string director;
+	Movie(string aTitle, string aDirector, string aRating) {
+		title = aTitle;
+		director = aDirector;
+		setRating(aRating);
+	}
+
+	void setRating(string aRating) {
+		if (aRating == "G" || aRating == "PG" || aRating == "PG-13" || aRating == "R" || aRating == "NR") {
+			rating = aRating; // valid rating
+		}
+		else {
+			rating = "NR";
+		}
+	}
+
+		string getRating() {
+			return rating;
+		}
+};
+
 class Book {
 public:
 	string title; // specify attributes of this class
@@ -192,6 +219,10 @@ int main() {
 	Student student2("Kyler", "Art", 3.7);
 
 	cout << characterName << "went to high school." << "His gpa was higher than expected, but lower than hoped. Is this other student on the honor roll? " << student1.hasHonors();
+
+	// Movie object
+	Movie avengers("The Avengers", "Joss Whedon", "PG-13"); // Movie object
+	cout << characterName << " rarely watches movies of this rating: " << avengers.getRating();
 
 	//cout << "\n\nEnter boss' age. This is just a placeholder to stop program. Doesn't matter. ";
 	// cin >> bossAge; //TODO erase placeholder
