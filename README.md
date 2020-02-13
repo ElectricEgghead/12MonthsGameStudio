@@ -13,4 +13,4 @@ Medium: http://tiny.cc/ElectricEggheadMedium
 ----------------------
 Images of challenge located in the ISSUES section.
 
-Create Your Utopia!
+Contribute Your Difference!
