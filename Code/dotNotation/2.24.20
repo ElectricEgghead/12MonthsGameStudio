@@ -1,0 +1,27 @@
+// learning about dot operators - strings
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include "random.h"
+
+string str;
+string str2 = "Writing ";
+string str3 = "print 10 and then 5 more";
+
+int main() {
+
+	// append member function
+	str.append(str2);
+	str.append(str3,6,3); // in str3, start at index 6, grab 3 characters "10 "
+	str.append("dots are cool", 5); // grab first five indices of appended sentence "dots "
+	str.append("here: "); // add here:
+	str.append(10u, '.'); // add 10 dots
+	str.append(str3.begin()+8, str3.end()); // start at index 8 of str3, grab rest of sentence " and then 5 more"
+	str.append<int>(5, 0x2E); // add 5 dots using hexidecimal 0x2E
+
+	cout << str << '\n';
+
+
+	return 0;
+}
