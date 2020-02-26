@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include "random.h"
+#include "usingDeclarations.h"
 
 string str;
 string str2 = "Writing ";
