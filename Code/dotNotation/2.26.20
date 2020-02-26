@@ -1,0 +1,91 @@
+// learning about dot operators - strings; Feb 2020
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include "random.h"
+
+string str;
+string str2 = "Writing ";
+string str3 = "print 10 and then 5 more";
+
+void printStr();
+
+int main() {
+
+	// append member function
+	cout << "APPEND\n"; 
+	str.append(str2); // string
+	
+	str.append(str3,6,3); // substring; add str3, start at index 6, grab 3 characters "10 "
+	
+	str.append("dots are cool", 5); // c-string; grab first five indices of appended sentence "dots "
+	
+	str.append("here: "); // buffer; add here:
+	
+	str.append(10u, '.'); // fill; add 10 dots
+	
+	str.append(str3.begin()+8, str3.end()); // range; start at index 8 of str3, grab rest of sentence " and then 5 more"
+	
+	//todo error overloaded function, https://stackoverflow.com/questions/21597592/error-no-instance-of-overloaded-function,
+https://stackoverflow.com/questions/946813/c-cli-converting-from-systemstring-to-stdstring
+	// str.append<int>(5, 0x2E); // initializer list; add 5 dots using hexidecimal 0x2E
+
+	printStr();
+	
+
+	// assign member function
+	string base = "The quick brown fox jumps over a lazy dog.";
+	cout << "\nASSIGN\n";
+
+	str.assign(base);
+	printStr();
+
+	str.assign(base, 10, 9); // substring; starts at index 10 and grabs 9 char "brown fox"
+	printStr();
+	
+	str.assign("pangrams are cool", 7);
+	printStr();
+
+	str.assign("c-string");
+	printStr();
+
+	str.assign(10, '*');
+	printStr();
+
+	str.assign<int>(10, 0x2D);
+	printStr(); // ----------
+
+	str.assign(base.begin() + 16, base.end() - 12); // "fox jumps over"
+	printStr();
+
+	// at member function
+	cout << "AT\n";
+	
+
+
+	return 0;
+} // end main()
+
+void printStr() {
+	cout << str << '\n';
+}
+
+//TODO notes
+
+/*
+string (1) | string& assign (const string& str);
+substring (2) | string& assign (const string& str, size_t subpos, size_t sublen = npos);
+c-string (3) | string& assign (const char* s);
+buffer (4) | string& assign (const char* s, size_t n);
+fill (5) | string& assign (size_t n, char c);
+range (6) | template <class InputIterator> string& assign (InputIterator first, InputIterator last);
+initializer list(7) | string& assign (initializer_list<char> il);
+move (8) | string& assign (string&& str) noexcept;
+-------
+subpos - starting point of a substring
+len, sublen - length of string or substring
+size_t - maximum possible size; unsigned integral type. denoted by -1.
+npos = all char until end of str
+
+*/
