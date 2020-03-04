@@ -1,0 +1,223 @@
+// learning about dot operators - strings; Feb 2020
+
+#include <iostream>
+#include <string>
+#include <cmath>
+#include "random.h"
+
+string str;
+string str2 = "Writing ";
+string str3 = "print 10 and then 5 more";
+
+void printStr();
+
+int main() {
+
+	// append member function
+	cout << "APPEND\n"; 
+	str.append(str2); // string
+	
+	str.append(str3,6,3); // substring; add str3, start at index 6, grab 3 characters "10 "
+	
+	str.append("dots are cool", 5); // c-string; grab first five indices of appended sentence "dots "
+	
+	str.append("here: "); // buffer; add here:
+	
+	str.append(10u, '.'); // fill; add 10 dots
+	
+	str.append(str3.begin()+8, str3.end()); // range; start at index 8 of str3, grab rest of sentence " and then 5 more"
+	
+	/*
+	
+	//todo error overloaded function, https://stackoverflow.com/questions/21597592/error-no-instance-of-overloaded-function,
+https://stackoverflow.com/questions/946813/c-cli-converting-from-systemstring-to-stdstring
+	// str.append<int>(5, 0x2E); // initializer list; add 5 dots using hexidecimal 0x2E
+
+	*/
+
+	printStr();
+	
+
+	// assign member function
+	string base = "The quick brown fox jumps over a lazy dog.";
+	cout << "\nASSIGN\n";
+
+	str.assign(base);
+	printStr();
+
+	str.assign(base, 10, 9); // substring; starts at index 10 and grabs 9 char "brown fox"
+	printStr();
+	
+	str.assign("pangrams are cool", 7);
+	printStr();
+
+	str.assign("c-string");
+	printStr();
+
+	str.assign(10, '*');
+	printStr();
+
+	//todo fix str.assign<int>(10, 0x2D);
+	printStr(); // ----------
+
+	str.assign(base.begin() + 16, base.end() - 12); // "fox jumps over"
+	printStr();
+
+	// at member function
+	cout << "\nAT\n";
+	string str("Test string");
+	for (unsigned i = 0; i < str.length(); ++i) {
+		cout << str.at(i); // prints out Test string, character by character
+	}
+
+	// back member function
+	cout << "\n\nBACK\n";
+	string str2("hello world."); // todo another way to declare variables; not as common??
+	str2.back() = '!';
+	cout << str2; // prints test string!
+
+	// begin member function
+	cout << "\n\nBEGIN\n";
+	string str3("Test string");
+	for (string::iterator it = str3.begin(); it != str3.end(); ++it)
+		cout << *it;
+		cout << '\n'; // prints Test string
+					  
+	// capacity member function; compares size, length, capacity, and max_size
+		cout << "\nCAPACITY\n";
+		cout << "size: " << str3.size() << "\n";
+		cout << "length: " << str3.length() << "\n";
+		cout << "capacity: " << str3.capacity() << "\n";
+		cout << "max_size: " << str3.max_size() << "\n";
+
+		// cbegin/cend member function
+		cout << "\nCBEGIN/CEND\n";
+		string str4 = "Lorem ipsum";
+		for (auto it = str4.cbegin(); it != str4.cend(); ++it)
+			cout << *it;
+			cout << '\n';
+
+		// clear member function
+			cout << "\nCLEAR\n";
+			char c;
+			cout << "Type some lines of text. Enter a dot (.) to finish: ";
+			do {
+				c = cin.get();
+				str += c;
+				if (c == '\n') {
+					cout << str;
+					str.clear();
+				}
+			} while (c != '.'); // prints out each line after using a newline character until you put in a dot (.). Cool!
+
+		// compare member function
+			cout << "\nCOMPARE\n";
+			string str5 = "green apple";
+			string str6 = "red apple";
+
+			// if str5 and str6 don't match
+			if (str5.compare(str6) != 0) {
+				cout << str5 << " is not a " << str6 << "\n";
+			}
+
+			// compare str5's (6,5)[start at index 6 and choose next 5 characters] to the word "apple" and see if match
+			if (str5.compare(6, 5, "apple") == 0) {
+				cout << "still, " << str5 << " is an apple\n"; 
+			}
+
+			// todo look up size() with neg number; compare str6's size with the word "apple" and see if match
+			if (str6.compare(str6.size() - 5, 5, "apple") == 0) {
+				cout << "and " << str6 << " is also an apple.\n";
+			}
+
+			// compare str5's (6,5) with str6's (4,5). if both match, then they are both apples
+			if (str5.compare(6, 5, str6, 4, 5) == 0) {
+						cout << "therefore, both are apples.\n";
+			}
+
+			// copy member function
+			
+			cout << "\nCOPY\n";
+			char buffer[20];
+			string str7 = "Test string...";
+			size_t length = str7.copy(buffer,6,5);
+			buffer[length] = '\0';
+			cout << "buffer contains: " << buffer << '\n'; // prints buffer contains: string
+
+			// crbegin/crend member function
+			cout << "\nCRBEGIN/CREND\n";
+
+			// prints text out backward
+			for (auto rit = str4.crbegin(); rit != str4.crend(); ++rit)
+				cout << *rit;
+				cout << '\n';
+
+			// c_str member function
+				cout << "\nC_STR\n";
+				string str8 = "Please split this sentence into tokens.";
+				char * cstr = new char[str.length()+1]; 
+				strcpy(cstr, str.c_str()); // cstr now contains a c-string copy of str; STRCPY_S and STRTOK_S is safer than strcpy and strtok
+				char * p = strtok(cstr, " ");
+				while (p != 0) {
+					cout << p << '\n';
+					p = strtok(NULL, " ");
+				}
+				delete[] cstr;
+
+				// data member function
+				cout << "\nDATA\n";
+
+				int length;
+				string str9 = "Test string";
+				char* cstr2 = "Test string";
+
+				if (str9.length() == strlen(cstr2))
+				{
+					cout << "str and cstr have the same length.\n";
+
+					if (memcmp(cstr2, str9.data(), str.length()) == 0)
+					cout << "str and cstr have the same content.\n";
+				}
+				// empty member function
+				// reads input line by line, stores into string until empty line encountered
+				cout << "\nEMPTY\n";
+
+				string content;
+				string line;
+				cout << "Please write some text. Enter an empty line when done: ";
+				do {
+					getline(cin, line);
+					content += line + '\n';
+				} while (!line.empty());
+				cout << "The text you wrote was: " << content;
+
+				// end member function
+				cout << "\nEND\n";
+
+
+
+				return 0;
+} // end main()
+
+void printStr() {
+	cout << str << '\n';
+}
+
+//TODO notes
+
+/*
+string (1) | string& assign (const string& str);
+substring (2) | string& assign (const string& str, size_t subpos, size_t sublen = npos);
+c-string (3) | string& assign (const char* s);
+buffer (4) | string& assign (const char* s, size_t n);
+fill (5) | string& assign (size_t n, char c);
+range (6) | template <class InputIterator> string& assign (InputIterator first, InputIterator last);
+initializer list(7) | string& assign (initializer_list<char> il);
+move (8) | string& assign (string&& str) noexcept;
+-------
+subpos - starting point of a substring
+len, sublen - length of string or substring
+size_t - maximum possible size; unsigned integral type. denoted by -1.
+npos = all char until end of str
+
+*/
