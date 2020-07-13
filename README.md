@@ -4,11 +4,11 @@
 --------------------------
 Website/Game Dev Blog: www.electricegghead.com
 
-YouTube channel: tiny.cc/ElectricEggheadYouTube
+YouTube channel: http://tiny.cc/ElectricEggheadYouTube
 
-Discord: discord.gg/vMvB8j6
+Discord: https://discord.gg/vMvB8j6
 
-Medium: tiny.cc/ElectricEggheadMedium
+Medium: http://tiny.cc/ElectricEggheadMedium
 
 ----------------------
 Images of challenge located in the ISSUES section.
