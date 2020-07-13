@@ -2,7 +2,7 @@
 
 ![Awol FX Cover Art](https://github.com/ElectricEgghead/12MonthsGameStudio/blob/master/awol%20fx%20background%20image.JPG)
 --------------------------
-Website/Game Dev Blog: http://tiny.cc/ElectricEgghead
+Website/Game Dev Blog: http://www.electricegghead.com
 
 YouTube channel: http://tiny.cc/ElectricEggheadYouTube
 
@@ -13,4 +13,5 @@ Medium: http://tiny.cc/ElectricEggheadMedium
 ----------------------
 Images of challenge located in the ISSUES section.
 
-Contribute Your Difference!
+Contribute Your Difference,
+Ashleigh
